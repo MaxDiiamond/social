@@ -1,0 +1,18 @@
+.navbar {
+    background-color:rgb(135, 46, 170);
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+.navbar a {
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+    color: white;
+}
+
+.navbar a:hover {
+    background-color: #f861f8;
+}
+

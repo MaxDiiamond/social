@@ -1,0 +1,10 @@
+.header {
+    background-color:rgb(135, 46, 170); 
+    border-radius: 5px;
+    padding: 10px;
+    
+}
+
+.header img {
+    width: 80px;
+}

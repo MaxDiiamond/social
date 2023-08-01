@@ -1,0 +1,42 @@
+.dialouge {
+    display: flex;
+
+}
+
+.dialouge p {
+    width: 70%;
+    background: #8d64ff;
+    padding: 5px;
+    border-radius: 5px;
+    
+}
+
+.dialouge p:first-child {
+    width: 30%;
+    text-decoration: underline;
+    background: none;
+}
+
+.dialouges input {
+    padding: 10px;
+    background-color: #d548da;
+    color: white;
+    border: none;
+    margin-right: 10px;
+    outline: none;
+}
+
+.dialouges input::placeholder{
+    color: white;
+}
+
+.dialouges button {
+    padding: 10px;
+    color: #fff;
+    background: #bd38c2;
+    border: none;
+}
+
+.dialouges button:hover {
+    background: #622264;
+}

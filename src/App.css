@@ -1,0 +1,37 @@
+body {
+  background: #ee95e9;
+  margin: 0;
+  padding: 15px;
+}
+
+.wrapper {
+  color: white;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-areas:
+    'h h'
+    'n p';
+  grid-gap: 10px;
+  grid-template-columns: 3fr 10fr;
+}
+
+.wrapper-content {
+  background-color: rgb(135, 46, 170);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.header {
+  grid-area: h;
+
+}
+
+.navbar {
+  grid-area: n;
+}
+
+.profile {
+  grid-area: p;
+}
