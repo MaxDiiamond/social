@@ -5,7 +5,9 @@ import Profile from './components/profile/Profile';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Dialouges from './components/dialouges/Dialouges'
 
-function App() {
+
+
+function App(props) {
   return (
     <div className='wrapper'>
       <BrowserRouter>
@@ -13,10 +15,10 @@ function App() {
         <Navbar />
         <div className="wrapper-content">
           <Routes >
-            <Route path="/profile" element={<Profile name={"Elon Musk"} />} />
-            <Route path="/dialouges" element={<Dialouges />} />
+            <Route exact path="/" element={<Profile name={"Elon Musk"} postData={props.postData} />} />
+            <Route path="/profile" element={<Profile name={"Elon Musk"} postData={props.postData} />} />
+            <Route path="/dialouges" element={<Dialouges messages={props.messages} />} />
           </Routes>
-          
         </div>
       </BrowserRouter>
 

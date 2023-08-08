@@ -1,6 +1,4 @@
-.profile {
-    
-}
+
 
 .me img {
     width: 25%;
@@ -43,3 +41,10 @@
 .posts button:hover {
     background: #622264;
 }
+
+.like {
+    background: #bd38c2;
+    padding: 3px;
+    width: fit-content;
+}
+

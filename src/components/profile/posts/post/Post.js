@@ -6,7 +6,8 @@ export default function Post(props) {
         <div className="post">
             <img src={ava_mini} alt="musk" />
             <span>Elon Musk</span>
-            <p>{props.message}</p>
+            <p>{props.message} </p>
+            <p className="like">Likes: {props.likes}</p>
         </div>
     )
 }
