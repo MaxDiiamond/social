@@ -15,9 +15,9 @@ function App(props) {
         <Navbar />
         <div className="wrapper-content">
           <Routes >
-            <Route exact path="/" element={<Profile name={"Elon Musk"} postData={props.postData} />} />
-            <Route path="/profile" element={<Profile name={"Elon Musk"} postData={props.postData} />} />
-            <Route path="/dialouges" element={<Dialouges messages={props.messages} />} />
+            <Route exact path="/" element={<Profile postData={props.state.profilePage} />} />
+            <Route path="/profile" element={<Profile postData={props.state.profilePage} />} />
+            <Route path="/dialouges" element={<Dialouges dialouges={props.state.dialougePage} />} />
           </Routes>
         </div>
       </BrowserRouter>
