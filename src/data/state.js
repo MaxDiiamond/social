@@ -1,19 +1,32 @@
 let state = {
 
-
     profilePage: {
         postData: [
-            { text: "Hey Guys!", id: 1, likes: 3 },
-            { text: "Walking...", id: 2, likes: 5 },
-            { text: "On a run", id: 3, likes: 7 },
-            { text: "Relaxing", id: 4, likes: 13 },
+            {
+                name: "Elon Musk",
+                ava: "img/Emusk.jpg",
+                ava_mini: "img/Emusk_mini.jpg",
+                id: 0,
+                posts: [
+                    { text: "Hey Guys!", id: 1, likes: 3 },
+                    { text: "Walking...", id: 2, likes: 5 },
+                    { text: "On a run", id: 3, likes: 7 },
+                    { text: "Relaxing", id: 4, likes: 13 },
+                ]
+            },
+
+            {
+                name: "Bill Gates",
+                ava: "img/Bill.jpg",
+                ava_mini: "img/Bill.jpg",
+                id: 1,
+                posts: [
+                    { text: "Hey Guys!", id: 1, likes: 334 },
+                    { text: "Relaxing", id: 2, likes: 133 },
+                ]
+            }
         ],
-
-        users: [
-            {firstName: "Elon", lastName: "Musk", id: 1},
-        ]
     },
-
 
     dialougePage: {
         messages: [
