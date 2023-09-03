@@ -10,7 +10,7 @@ export default function Profile(props) {
   return (
     <div className="profile">
       <ProfileInfo name={user.name} ava={user.ava} />
-      <Posts posts={user.posts} ava_mini={user.ava_mini} name={user.name} />
+      <Posts posts={user.posts} ava_mini={user.ava_mini} name={user.name} addPost={props.addPost} />
     </div>
   )
 }
