@@ -4,9 +4,13 @@ import Dialouge from "./dialouge/Dialouge";
 
 export default function Dialouges(props) {
     let newMessage = React.createRef()
-    let addMessage = ()=> {
+    let addMessage = () => {
         props.addMessage(newMessage.current.value)
         newMessage.current.value = ""
+    }
+
+    let onMessageChange = () => {
+        props.onMessageChange(newMessage.current.value)
     }
 
     return (
@@ -16,7 +20,13 @@ export default function Dialouges(props) {
             {/* <Dialouge name={messages[1].name} message={messages[1].message} />
             <Dialouge name={messages[2].name} message={messages[2].message} /> */}
 
-            <input ref={newMessage} type="text" placeholder="Write a Message..." />
+            <input
+                ref={newMessage}
+                type="text"
+                placeholder="Write a Message..."
+                value={props.newMessageText}
+                onChange={onMessageChange}
+            />
             <button onClick={addMessage}>Send</button>
         </div>
     )

@@ -26,6 +26,8 @@ let state = {
                 ]
             }
         ],
+
+        newPostText: ""
     },
 
     dialougePage: {
@@ -34,7 +36,9 @@ let state = {
             { name: "Elon Musk", message: "Let's go to space!", id: 2 },
             { name: "Bill Gates", message: "What are you doing today?", id: 3 },
             { name: "Jon Jones", message: "Hello?", id: 4 },
-        ]
+        ],
+
+        newMessageText: ""
     }
 
 }
@@ -46,13 +50,23 @@ export let addPost = (postText) => {
         likes: 9,
     }
     state.profilePage.postData[0].posts.unshift(newPost)
-    console.log(state)
+    state.profilePage.newPostText = ""
+    rerenderTree(state)
+}
+
+export let onPostChange = (text) => {
+    state.profilePage.newPostText = text
+    rerenderTree(state)
+}
+
+export let onMessageChange = (text) => {
+    state.dialougePage.newMessageText = text
     rerenderTree(state)
 }
 
 export let addMessage = (text) => {
     let newMessage = {
-        name: "1010",
+        name: "",
         message: text,
         id: state.dialougePage.messages.length + 1,
     }
