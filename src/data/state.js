@@ -1,5 +1,3 @@
-import { rerenderTree } from "../render"
-
 let state = {
 
     profilePage: {
@@ -74,4 +72,14 @@ export let addMessage = (text) => {
     rerenderTree(state)
 }
 
+let rerenderTree = ()=> {
+    console.log("its fake function");
+}
+
+export let subscribe = (observer)=> {
+    rerenderTree = observer
+}
+
 export default state 
+
+window.state = state
