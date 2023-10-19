@@ -1,19 +1,20 @@
 import React from "react"
 import Post from "./post/Post"
-import { onPostChange } from "../../../data/state"
+import { addPostAC, onPostChangeAC } from "../../../data/profileReducer"
 
 
 
 export default function Posts(props) {
     console.log(props)
+
     let postText = React.createRef()
     let addPost = () => {
-        props.addPost(postText.current.value)
+        props.dispatch(addPostAC())
         postText.current.value = ""
     }
 
     let onPostChange = () => {
-        props.onPostChange(postText.current.value)
+        props.dispatch(onPostChangeAC(postText.current.value))
     }
 
     return (

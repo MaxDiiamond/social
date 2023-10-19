@@ -1,16 +1,18 @@
 import React from "react";
 import Dialouge from "./dialouge/Dialouge";
-
+import { addMessageAC,  onMessageChangeAC } from "../../data/state";
 
 export default function Dialouges(props) {
+    console.log(props)
+
     let newMessage = React.createRef()
     let addMessage = () => {
-        props.addMessage(newMessage.current.value)
+        props.dispatch(addMessageAC())
         newMessage.current.value = ""
     }
 
     let onMessageChange = () => {
-        props.onMessageChange(newMessage.current.value)
+        props.dispatch(onMessageChangeAC(newMessage.current.value))
     }
 
     return (

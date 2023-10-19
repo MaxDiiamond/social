@@ -5,9 +5,6 @@ import Profile from './components/profile/Profile';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Dialouges from './components/dialouges/Dialouges'
 import Users from './components/users/Users';
-import { onMessageChange, onPostChange } from './data/state';
-
-
 
 function App(props) {
   return (
@@ -19,21 +16,20 @@ function App(props) {
           <Routes >
             <Route exact path="/" element={<Profile
               profilePage={props.state.profilePage}
-              addPost={props.addPost}
               newPostText={props.state.profilePage.newPostText}
-              onPostChange={props.onPostChange} 
+              dispatch={props.dispatch}
               />} />
 
             <Route path="/profile" element={<Profile
               profilePage={props.state.profilePage}
-              addPost={props.addPost}
               newPostText={props.state.profilePage.newPostText}
-              onPostChange={props.onPostChange} />} />
+              dispatch={props.dispatch}
+               />} />
 
             <Route path="/dialouges" element={<Dialouges
-              dialouges={props.state.dialougePage} addMessage={props.addMessage} 
-              onMessageChange={props.onMessageChange}
+              dialouges={props.state.dialougePage}  
               newMessageText={props.state.dialougePage.newMessageText}
+              dispatch={props.dispatch}
               />} />
 
             <Route path="/users" element={

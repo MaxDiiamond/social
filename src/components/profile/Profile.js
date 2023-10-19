@@ -14,9 +14,8 @@ export default function Profile(props) {
         posts={user.posts}
         ava_mini={user.ava_mini}
         name={user.name}
-        addPost={props.addPost}
         newPostText={props.newPostText}
-        onPostChange={props.onPostChange} />
+        dispatch={props.dispatch} />
     </div>
   )
 }
