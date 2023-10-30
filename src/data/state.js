@@ -1,7 +1,7 @@
 import profileReducer from "./profileReducer"
+import dialougeReducer from "./dialougeReducer"
 
-const ADD_MESSAGE = "ADD-MESSAGE"
-const ON_MESSAGE_CHANGE = "ON-MESSAGE-CHANGE"
+
 
 let store = {
     _state: {
@@ -75,21 +75,9 @@ let store = {
     },
 
     dispatch(action) {
-        this._state = profileReducer(this._state.profilePage, action)
+        this._state.profilePage = profileReducer(this._state.profilePage, action)
+        this._state.dialougePage = dialougeReducer(this._state.dialougePage, action)
         this.rerenderTree(this._state)
-
-        // if (action.type == ADD_MESSAGE) {
-        //     let newMessage = {
-        //         name: "",
-        //         message: this._state.dialougePage.newMessageText,
-        //         id: this._state.dialougePage.messages.length + 1,
-        //     }
-        //     this._state.dialougePage.messages.unshift(newMessage)
-        //     this.rerenderTree(this._state)
-        // } else if (action.type == ON_MESSAGE_CHANGE) {
-        //     this._state.dialougePage.newMessageText = action.text
-        //     this.rerenderTree(this._state)
-        // }
     },
 
 
@@ -97,18 +85,3 @@ let store = {
 window.state = store._state
 
 export default store
-
-export let addMessageAC = () => {
-    return {
-        type: ADD_MESSAGE,
-        id: 1
-    }
-}
-
-export let onMessageChangeAC = (text) => {
-    return {
-        type: ON_MESSAGE_CHANGE,
-        text: text,
-        id: 2
-    }
-}

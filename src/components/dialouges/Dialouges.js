@@ -1,6 +1,6 @@
 import React from "react";
 import Dialouge from "./dialouge/Dialouge";
-import { addMessageAC,  onMessageChangeAC } from "../../data/state";
+import { addMessageAC, onMessageChangeAC } from "../../data/dialougeReducer";
 
 export default function Dialouges(props) {
     console.log(props)

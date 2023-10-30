@@ -1,7 +1,7 @@
 const ADD_POST = "ADD-POST"
 const POST_CHANGE = "POST-CHANGE"
 
-let profileReducer = (action, state) => {
+let profileReducer = (state, action) => {
     if (action.type == ADD_POST) {
         let newPost = {
             text: state.newPostText,
