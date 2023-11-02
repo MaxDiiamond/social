@@ -7,6 +7,7 @@ import Dialouges from './components/dialouges/Dialouges'
 import Users from './components/users/Users';
 
 function App(props) {
+  console.log(props);
   return (
     <div className='wrapper'>
       <BrowserRouter>

@@ -4,7 +4,7 @@
 
 import React from "react";
 import ReactDOM from 'react-dom/client';
-import store from "./data/state";
+import store from "./data/store";
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -25,4 +25,6 @@ export let rerenderTree = (state) => {
 
 reportWebVitals();
 rerenderTree(store.getState())
-store.subscribe(rerenderTree)
+store.subscribe(() => {
+    rerenderTree(store.getState())
+})

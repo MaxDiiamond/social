@@ -1,7 +1,18 @@
 const ADD_MESSAGE = "ADD-MESSAGE"
 const ON_MESSAGE_CHANGE = "ON-MESSAGE-CHANGE"
 
-let dialougeReducer = (state, action) => {
+let initialState = {
+    messages: [
+        { name: "Ivan Ivanov", message: "How is your day?", id: 1 },
+        { name: "Elon Musk", message: "Let's go to space!", id: 2 },
+        { name: "Bill Gates", message: "What are you doing today?", id: 3 },
+        { name: "Jon Jones", message: "Hello?", id: 4 },
+    ],
+
+    newMessageText: ""
+}
+
+let dialougeReducer = (state = initialState, action) => {
     if (action.type == ADD_MESSAGE) {
         let newMessage = {
             name: "",

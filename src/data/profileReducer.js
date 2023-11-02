@@ -1,7 +1,36 @@
 const ADD_POST = "ADD-POST"
 const POST_CHANGE = "POST-CHANGE"
 
-let profileReducer = (state, action) => {
+let initialState = {
+        postData: [
+            {
+                name: "Elon Musk",
+                ava: "img/Emusk.jpg",
+                ava_mini: "img/Emusk_mini.jpg",
+                id: 0,
+                posts: [
+                    { text: "Hey Guys!", id: 1, likes: 3 },
+                    { text: "Relaxing", id: 2, likes: 13 },
+                ]
+            },
+
+            {
+                name: "Bill Gates",
+                ava: "img/Bill.jpg",
+                ava_mini: "img/Bill.jpg",
+                id: 1,
+                posts: [
+                    { text: "Hey Guys!", id: 1, likes: 334 },
+                    { text: "Relaxing", id: 2, likes: 133 },
+                ]
+            }
+        ],
+
+        newPostText: ""
+    }
+
+
+let profileReducer = (state = initialState, action) => {
     if (action.type == ADD_POST) {
         let newPost = {
             text: state.newPostText,
